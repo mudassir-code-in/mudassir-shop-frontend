@@ -21,7 +21,7 @@ const DeliveryAgentDashboard = () => {
     setApiResponse(null);
 
     try {
-      const response = await axios.post(`https://mudassir-shop-backned.onrender.com/api/order/deliver-order`,
+      const response = await axios.post(`https://mudassir-shop-backend.onrender.com/api/order/deliver-order`,
         { orderId: orderId.trim() },
         { withCredentials: true }
       );

@@ -23,7 +23,7 @@ const OtpVerification = () => {
             const requestPayload = { email, otp };
 
             // EXECUTE: Transmit cryptographic secure handshake validation token parameters
-            const response = await axios.post('https://mudassir-shop-backned.onrender.com/api/auth/verify-email', requestPayload);
+            const response = await axios.post('https://mudassir-shop-backend.onrender.com/api/auth/verify-email', requestPayload);
 
             setSuccessMsg(response.data.message || "SECURITY TOKEN VALIDATED. ACCOUNT LIFECYCLE INITIALIZED.");
 

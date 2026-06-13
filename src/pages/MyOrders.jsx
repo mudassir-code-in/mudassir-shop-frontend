@@ -13,7 +13,7 @@ const MyOrders = ({ user }) => {
             setErrorMsg('');
 
             const response = await axios.get(
-                'https://mudassir-shop-backned.onrender.com/api/order/get-my-orders',
+                'https://mudassir-shop-backend.onrender.com/api/order/get-my-orders',
                 { withCredentials: true }
             );
 
@@ -109,7 +109,7 @@ const MyOrders = ({ user }) => {
                                             )}
 
                                             <span className="text-sm sm:text-base font-black font-mono text-black">
-                                                ${calculatedTotal.toFixed(2)}
+                                                ₹{calculatedTotal.toFixed(2)}
                                             </span>
                                         </div>
                                     </div>
@@ -147,7 +147,7 @@ const MyOrders = ({ user }) => {
                                                         <div className="flex items-center space-x-2 text-[9px] text-zinc-400 font-mono mt-1">
                                                             <span className="bg-zinc-50 border border-zinc-100 px-1.5 py-0.5 rounded text-zinc-500 font-bold">QTY: {item?.quantity || 1}</span>
                                                             <span className="text-zinc-200">|</span>
-                                                            <span>UNIT RATE: ${Number(item?.price || 0).toFixed(2)}</span>
+                                                            <span>UNIT RATE: ₹{Number(item?.price || 0).toFixed(2)}</span>
                                                         </div>
                                                     </div>
 
@@ -165,6 +165,7 @@ const MyOrders = ({ user }) => {
                                                     ? order.addressid
                                                     : `${order.addressid?.address || order.addressid?.street || 'N/A'}, ${order.addressid?.city || ''}`}
                                             </span>
+                                            <span className="font-mono uppercase font-black text-[9px] text-zinc-400 mr-1 tracking-wider flex ">I want to cancel my order. CONTACT: 6387963449</span>
                                         </div>
                                     )}
 

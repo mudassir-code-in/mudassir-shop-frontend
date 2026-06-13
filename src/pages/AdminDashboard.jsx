@@ -28,7 +28,7 @@ const AdminDashboard = () => {
       setLoading(true);
       setErrorMsg('');
 
-      const response = await axios.get('https://mudassir-shop-backned.onrender.com/api/product/get-all-products', {
+      const response = await axios.get('https://mudassir-shop-backend.onrender.com/api/product/get-all-products', {
         withCredentials: true
       });
 
@@ -95,7 +95,7 @@ const AdminDashboard = () => {
         Object.keys(updatePayload).forEach(key => updatePayload[key] === undefined && delete updatePayload[key]);
 
         const response = await axios.post(
-          'https://mudassir-shop-backned.onrender.com/api/product/update-product',
+          'https://mudassir-shop-backend.onrender.com/api/product/update-product',
           updatePayload,
           { withCredentials: true }
         );
@@ -116,7 +116,7 @@ const AdminDashboard = () => {
         }
 
         const response = await axios.post(
-          'https://mudassir-shop-backned.onrender.com/api/product/upload-product',
+          'https://mudassir-shop-backend.onrender.com/api/product/upload-product',
           formData,
           {
             withCredentials: true,
@@ -148,7 +148,7 @@ const AdminDashboard = () => {
       try {
         setSubmitting(true);
 
-        const response = await axios.delete(`https://mudassir-shop-backned.onrender.com/api/product/delete/${id}`, {
+        const response = await axios.delete(`https://mudassir-shop-backend.onrender.com/api/product/delete/${id}`, {
           withCredentials: true
         });
 
@@ -295,7 +295,7 @@ const AdminDashboard = () => {
 
               {/* PRODUCT PRICE */}
               <div className="space-y-1.5">
-                <label className="block text-[10px] font-bold text-zinc-500 uppercase">Product Price ($)</label>
+                <label className="block text-[10px] font-bold text-zinc-500 uppercase">Product Price (₹)</label>
                 <input
                   type="number"
                   placeholder="e.g. 199"
@@ -408,7 +408,7 @@ const AdminDashboard = () => {
                         <td className="p-4 font-bold text-black truncate max-w-[120px]">{product.name}</td>
                         <td className="p-4 font-mono text-zinc-500 text-[11px]">{product.category}</td>
                         <td className="p-4 text-zinc-400 max-w-[150px] truncate normal-case font-medium">{product.description}</td>
-                        <td className="p-4 font-mono font-bold text-zinc-900 text-[13px]">${product.price}</td>
+                        <td className="p-4 font-mono font-bold text-zinc-900 text-[13px]">₹{product.price}</td>
                         <td className="p-4 text-right font-mono text-xs space-x-3 whitespace-nowrap">
                           <button
                             onClick={() => handleEditClick(product)}

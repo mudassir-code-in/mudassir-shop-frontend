@@ -30,7 +30,7 @@ const App = () => {
         setLoading(true);
 
         const response = await axios.post(
-          'https://mudassir-shop-backned.onrender.com/api/auth/refresh-token',
+          'https://mudassir-shop-backend.onrender.com/api/auth/refresh-token',
           {},
           { withCredentials: true }
         );

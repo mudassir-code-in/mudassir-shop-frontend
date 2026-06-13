@@ -30,7 +30,7 @@ const Register = () => {
     };
 
     try {
-      const response = await axios.post('https://mudassir-shop-backned.onrender.com/api/auth/register', requestPayload);
+      const response = await axios.post('https://mudassir-shop-backend.onrender.com/api/auth/register', requestPayload);
 
       if (response.status !== 200 && response.status !== 201) {
         throw response;

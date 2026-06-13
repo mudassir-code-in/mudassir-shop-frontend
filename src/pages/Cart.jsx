@@ -28,7 +28,7 @@ const Cart = () => {
       setLoading(true);
       setErrorMsg('');
 
-      const response = await axios.get('https://mudassir-shop-backned.onrender.com/api/product/get-cart', {
+      const response = await axios.get('https://mudassir-shop-backend.onrender.com/api/product/get-cart', {
         withCredentials: true
       });
 
@@ -54,7 +54,7 @@ const Cart = () => {
   const fetchSavedAddress = async () => {
     try {
       setAddressLoading(true);
-      const response = await axios.get('https://mudassir-shop-backned.onrender.com/api/order/get-my-address', {
+      const response = await axios.get('https://mudassir-shop-backend.onrender.com/api/order/get-my-address', {
         withCredentials: true
       });
 
@@ -106,7 +106,7 @@ const Cart = () => {
   // MUTATE: Increment item quantity block unit within system allocation mapping
   const handleAddToCart = async (productId) => {
     try {
-      await axios.post('https://mudassir-shop-backned.onrender.com/api/product/add-cart',
+      await axios.post('https://mudassir-shop-backend.onrender.com/api/product/add-cart',
         { productId },
         { withCredentials: true }
       );
@@ -120,7 +120,7 @@ const Cart = () => {
   const handleRemoveFromCart = async (productId) => {
     try {
       setErrorMsg('');
-      await axios.post('https://mudassir-shop-backned.onrender.com/api/product/remove-cart-product',
+      await axios.post('https://mudassir-shop-backend.onrender.com/api/product/remove-cart-product',
         { productId },
         { withCredentials: true }
       );
@@ -145,7 +145,7 @@ const Cart = () => {
       setErrorMsg('');
       setLoading(true);
 
-      const response = await axios.post('https://mudassir-shop-backned.onrender.com/api/order/order-product',
+      const response = await axios.post('https://mudassir-shop-backend.onrender.com/api/order/order-product',
         addressPayload,
         { withCredentials: true }
       );
@@ -237,7 +237,7 @@ const Cart = () => {
 
                       <div>
                         <h3 className="font-sans text-sm font-medium text-black normal-case tracking-normal">{productData.name || "Unnamed Product"}</h3>
-                        <p className="text-zinc-400 mt-1 font-mono">${productData.price || 0}</p>
+                        <p className="text-zinc-400 mt-1 font-mono">₹{productData.price || 0}</p>
                       </div>
                     </div>
 
@@ -263,7 +263,7 @@ const Cart = () => {
               <div className="space-y-3 font-sans text-sm text-zinc-600 normal-case">
                 <div className="flex justify-between">
                   <span>Cart Subtotal</span>
-                  <span className="font-mono text-black font-medium">${totalAmount}</span>
+                  <span className="font-mono text-black font-medium">₹{totalAmount}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>System Delivery Charges</span>
@@ -272,7 +272,7 @@ const Cart = () => {
                 <div className="border-t border-zinc-200 my-4"></div>
                 <div className="flex justify-between text-black font-semibold text-base font-mono uppercase tracking-wider">
                   <span>ESTIMATED TOTAL</span>
-                  <span>${totalAmount}</span>
+                  <span>₹{totalAmount}</span>
                 </div>
               </div>
 

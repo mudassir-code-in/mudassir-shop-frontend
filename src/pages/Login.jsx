@@ -23,7 +23,7 @@ const Login = ({ setUser }) => {
 
       // Axios POST request allowing cross-site cookie transfers
       const response = await axios.post(
-        'https://mudassir-shop-backned.onrender.com/api/auth/login',
+        'https://mudassir-shop-backend.onrender.com/api/auth/login',
         requestPayload,
         { withCredentials: true } // Enables browser to automatically capture HTTP-Only cookies
       );

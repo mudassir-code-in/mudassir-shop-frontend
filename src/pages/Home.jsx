@@ -18,7 +18,7 @@ const Home = () => {
     try {
       setLoading(true);
       setErrorMsg('');
-      const response = await axios.get('https://mudassir-shop-backned.onrender.com/api/product/get-all-products');
+      const response = await axios.get('https://mudassir-shop-backend.onrender.com/api/product/get-all-products');
 
       if (response.data && response.data.allProducts) {
         setProducts(response.data.allProducts);
@@ -41,7 +41,7 @@ const Home = () => {
       setSuccessMsg('');
 
       await axios.post(
-        'https://mudassir-shop-backned.onrender.com/api/product/add-cart',
+        'https://mudassir-shop-backend.onrender.com/api/product/add-cart',
         { productId },
         { withCredentials: true }
       );
@@ -135,7 +135,7 @@ const Home = () => {
                         </h3>
                       </div>
                       <span className="text-xs font-bold font-mono text-black whitespace-nowrap bg-zinc-50 border border-zinc-100 px-1.5 py-0.5 rounded-md">
-                        ${product.price}
+                        ₹{product.price}
                       </span>
                     </div>
 
@@ -182,7 +182,7 @@ const Home = () => {
                       {product.category || "General Context"}
                     </div>
                     <div className="text-lg font-bold font-mono text-black block">
-                      ${product.price}
+                      ₹{product.price}
                     </div>
                     <span className="text-[8px] text-zinc-400 font-sans normal-case block">Free logistics allocation eligible</span>
                   </div>
