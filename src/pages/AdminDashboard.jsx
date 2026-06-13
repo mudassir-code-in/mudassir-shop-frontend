@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; 
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 
@@ -28,7 +29,7 @@ const AdminDashboard = () => {
       setLoading(true);
       setErrorMsg('');
 
-      const response = await axios.get('https://mudassir-shop-backend.onrender.com/api/product/get-all-products', {
+      const response = await axios.get(`${API_URL}/api/product/get-all-products`, {
         withCredentials: true
       });
 
@@ -95,7 +96,7 @@ const AdminDashboard = () => {
         Object.keys(updatePayload).forEach(key => updatePayload[key] === undefined && delete updatePayload[key]);
 
         const response = await axios.post(
-          'https://mudassir-shop-backend.onrender.com/api/product/update-product',
+          `${API_URL}/api/product/update-product`,
           updatePayload,
           { withCredentials: true }
         );
@@ -116,7 +117,7 @@ const AdminDashboard = () => {
         }
 
         const response = await axios.post(
-          'https://mudassir-shop-backend.onrender.com/api/product/upload-product',
+          `${API_URL}/api/product/upload-product`,
           formData,
           {
             withCredentials: true,
@@ -148,7 +149,7 @@ const AdminDashboard = () => {
       try {
         setSubmitting(true);
 
-        const response = await axios.delete(`https://mudassir-shop-backend.onrender.com/api/product/delete/${id}`, {
+        const response = await axios.delete(`${API_URL}/api/product/delete/${id}`, {
           withCredentials: true
         });
 

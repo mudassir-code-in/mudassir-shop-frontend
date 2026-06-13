@@ -1,3 +1,4 @@
+const API_URL = import.meta.env.VITE_API_URL;
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
@@ -30,7 +31,7 @@ const Navbar = ({ user, setUser }) => {
     const confirmAndExecuteLogout = async () => {
         setShowConfirmModal(false);
         try {
-            await axios.post('https://mudassir-shop-backend.onrender.com/api/auth/logout', {}, { withCredentials: true });
+            await axios.post(`${API_URL}/api/auth/logout`, {}, { withCredentials: true });
         } catch (error) {
             // Gracefully handled catch block for standard fallbacks
         } finally {

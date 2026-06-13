@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const DeliveryAgentDashboard = () => {
   const [orderId, setOrderId] = useState('');
@@ -21,7 +22,7 @@ const DeliveryAgentDashboard = () => {
     setApiResponse(null);
 
     try {
-      const response = await axios.post(`https://mudassir-shop-backend.onrender.com/api/order/deliver-order`,
+      const response = await axios.post(`${API_URL}/api/order/deliver-order`,
         { orderId: orderId.trim() },
         { withCredentials: true }
       );

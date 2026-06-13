@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -18,7 +19,7 @@ const Home = () => {
     try {
       setLoading(true);
       setErrorMsg('');
-      const response = await axios.get('https://mudassir-shop-backend.onrender.com/api/product/get-all-products');
+      const response = await axios.get(`${API_URL}/api/product/get-all-products`);
 
       if (response.data && response.data.allProducts) {
         setProducts(response.data.allProducts);
@@ -41,7 +42,7 @@ const Home = () => {
       setSuccessMsg('');
 
       await axios.post(
-        'https://mudassir-shop-backend.onrender.com/api/product/add-cart',
+        `${API_URL}/api/product/add-cart`,
         { productId },
         { withCredentials: true }
       );

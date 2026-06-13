@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Login = ({ setUser }) => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Login = ({ setUser }) => {
 
       // Axios POST request allowing cross-site cookie transfers
       const response = await axios.post(
-        'https://mudassir-shop-backend.onrender.com/api/auth/login',
+        `${API_URL}/api/auth/login`,
         requestPayload,
         { withCredentials: true } // Enables browser to automatically capture HTTP-Only cookies
       );

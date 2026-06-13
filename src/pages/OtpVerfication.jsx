@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const OtpVerification = () => {
     const location = useLocation();
@@ -23,7 +24,7 @@ const OtpVerification = () => {
             const requestPayload = { email, otp };
 
             // EXECUTE: Transmit cryptographic secure handshake validation token parameters
-            const response = await axios.post('https://mudassir-shop-backend.onrender.com/api/auth/verify-email', requestPayload);
+            const response = await axios.post(`${API_URL}/api/auth/verify-email`, requestPayload);
 
             setSuccessMsg(response.data.message || "SECURITY TOKEN VALIDATED. ACCOUNT LIFECYCLE INITIALIZED.");
 

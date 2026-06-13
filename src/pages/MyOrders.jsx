@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const MyOrders = ({ user }) => {
     const [orders, setOrders] = useState([]);
@@ -13,7 +14,7 @@ const MyOrders = ({ user }) => {
             setErrorMsg('');
 
             const response = await axios.get(
-                'https://mudassir-shop-backend.onrender.com/api/order/get-my-orders',
+                `${API_URL}/api/order/get-my-orders`,
                 { withCredentials: true }
             );
 

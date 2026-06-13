@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_API_URL;
 
 // Pages & Functional Layout Components Imports
 import Home from './pages/Home';
@@ -30,7 +31,7 @@ const App = () => {
         setLoading(true);
 
         const response = await axios.post(
-          'https://mudassir-shop-backend.onrender.com/api/auth/refresh-token',
+          `${API_URL}/auth/refresh-token`,
           {},
           { withCredentials: true }
         );

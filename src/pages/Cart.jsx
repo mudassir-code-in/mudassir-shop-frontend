@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Cart = () => {
   const [loading, setLoading] = useState(true);
@@ -28,7 +29,7 @@ const Cart = () => {
       setLoading(true);
       setErrorMsg('');
 
-      const response = await axios.get('https://mudassir-shop-backend.onrender.com/api/product/get-cart', {
+      const response = await axios.get(`${API_URL}/api/product/get-cart`, {
         withCredentials: true
       });
 
@@ -54,7 +55,7 @@ const Cart = () => {
   const fetchSavedAddress = async () => {
     try {
       setAddressLoading(true);
-      const response = await axios.get('https://mudassir-shop-backend.onrender.com/api/order/get-my-address', {
+      const response = await axios.get(`${API_URL}/api/order/get-my-address`, {
         withCredentials: true
       });
 
@@ -106,7 +107,7 @@ const Cart = () => {
   // MUTATE: Increment item quantity block unit within system allocation mapping
   const handleAddToCart = async (productId) => {
     try {
-      await axios.post('https://mudassir-shop-backend.onrender.com/api/product/add-cart',
+      await axios.post(`${API_URL}/api/product/add-cart`,
         { productId },
         { withCredentials: true }
       );
@@ -120,7 +121,7 @@ const Cart = () => {
   const handleRemoveFromCart = async (productId) => {
     try {
       setErrorMsg('');
-      await axios.post('https://mudassir-shop-backend.onrender.com/api/product/remove-cart-product',
+      await axios.post(`${API_URL}/api/product/remove-cart-product`,
         { productId },
         { withCredentials: true }
       );
@@ -145,7 +146,7 @@ const Cart = () => {
       setErrorMsg('');
       setLoading(true);
 
-      const response = await axios.post('https://mudassir-shop-backend.onrender.com/api/order/order-product',
+      const response = await axios.post(`${API_URL}/api/order/order-product`,
         addressPayload,
         { withCredentials: true }
       );
