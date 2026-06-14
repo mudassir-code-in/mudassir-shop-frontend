@@ -10,7 +10,7 @@ const Footer = () => {
                 {/* LEFT SIDE: BRAND & DEV INFO */}
                 <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-3 text-center sm:text-left">
                     <span className="text-black font-bold tracking-wider">
-                        © {currentYear} VNTG.CO
+                        © {currentYear} MUDASSIR.SHOP
                     </span>
                     <span className="hidden sm:inline text-zinc-200">|</span>
                     <span className="lowercase font-sans text-zinc-400">
