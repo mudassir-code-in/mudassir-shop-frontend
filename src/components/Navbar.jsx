@@ -73,7 +73,7 @@ const Navbar = ({ user, setUser }) => {
 
                         {/* BRAND LOGO */}
                         <Link to="/" className="text-base md:text-lg font-bold tracking-[0.2em] text-black uppercase font-mono transition-opacity hover:opacity-80">
-                            VINTAGE<span className="font-light text-zinc-300">.CO</span>
+                            MUDASSIR<span className="font-light text-zinc-300">.SHOP</span>
                         </Link>
                     </div>
 

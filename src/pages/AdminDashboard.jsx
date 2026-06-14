@@ -286,7 +286,7 @@ const AdminDashboard = () => {
                 <label className="block text-[10px] font-bold text-zinc-500 uppercase">Product Name</label>
                 <input
                   type="text"
-                  placeholder="e.g. Vintage Leather Jacket"
+                  placeholder="e.g. Mudassir.shop Leather Jacket"
                   value={formName}
                   onChange={(e) => setFormName(e.target.value)}
                   className="w-full p-3 bg-zinc-50/50 border border-zinc-200 text-xs font-sans rounded-xl focus:outline-none focus:border-black focus:bg-white transition-all text-black font-medium normal-case"
