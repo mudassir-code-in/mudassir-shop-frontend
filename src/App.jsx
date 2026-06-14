@@ -31,7 +31,7 @@ const App = () => {
         setLoading(true);
 
         const response = await axios.post(
-          `${API_URL}/auth/refresh-token`,
+          `${API_URL}/api/auth/refresh-token`,
           {},
           { withCredentials: true }
         );
