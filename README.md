@@ -1,16 +1,43 @@
-# React + Vite
+Overview
+This is a full-stack E-commerce application built using the MERN Stack (MongoDB, Express, React, Node.js). The project is designed to provide a secure and efficient shopping experience, featuring robust authentication, role-based access, and a complete order management workflow.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Key Features
+Secure Auth: Industry-standard authentication with hashing and JWT for secure sessions.
 
-Currently, two official plugins are available:
+Role-Based Access Control (RBAC): Distinct permissions for Admin, Delivery Agent, and Users.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Smart Caching: Integrated Redis to ensure high performance and faster database queries.
 
-## React Compiler
+Full CRUD Operations: Comprehensive product management for Admins, including file uploads.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Delivery Workflow: Unique ID-based delivery verification system with duplicate protection.
 
-## Expanding the ESLint configuration
+Automated Notifications: Instant HTML-based email alerts to the Admin upon new order placement.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🎨 Frontend & Design (AI-Assisted)
+Transparency Notice: I have utilized AI tools to assist in the frontend design and UI structuring of this project. AI helped me refine the layout and user experience, ensuring a clean and modern interface. I believe in being transparent about my development process as it represents the modern way of building software efficiently.
+
+🛠 Tech Stack
+Frontend: React.js, Tailwind CSS
+
+Backend: Node.js, Express.js
+
+Database: MongoDB
+
+Caching: Redis
+
+Auth: JWT & Bcrypt
+
+Others: Multer (File Upload), Nodemailer
+
+⚙️ How it Works
+Authentication: Secure registration and login flows.
+
+Order Flow: Users add products to their cart. Upon checkout, the system validates the user's address and triggers a persistent order record.
+
+Notifications: Once an order is placed, an automated, detailed email is sent to the Admin.
+
+Delivery Verification: Delivery Agents use a unique, order-specific ID to mark an order as 'Delivered.' The system includes a check to prevent duplicate delivery entries.
+
+💡 Learning & Challenges
+Building this project allowed me to dive deep into Security Architecture, Database Synchronization, and Edge Case Handling (such as preventing duplicate deliveries and ensuring cache invalidation). It has been a significant learning milestone in my journey toward becoming a full-stack developer.
