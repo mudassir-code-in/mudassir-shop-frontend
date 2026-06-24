@@ -26,7 +26,7 @@ Database: MongoDB
 
 Caching: Redis
 
-Auth: JWT & Bcrypt
+Auth: JWT & Bcrypt, Crypto
 
 Others: Multer (File Upload), Nodemailer
 
